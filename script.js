@@ -299,24 +299,10 @@ if (carousel) {
 }
 
 if (hasFinePointer && cursorRing) {
-  let cursorX = 0;
-  let cursorY = 0;
-  let cursorFrame = null;
-
-  const renderCursor = () => {
-    cursorRing.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%) scale(1)`;
-    cursorFrame = null;
-  };
-
   window.addEventListener(
     "pointermove",
     (event) => {
-      cursorX = event.clientX;
-      cursorY = event.clientY;
-
-      if (!cursorFrame) {
-        cursorFrame = window.requestAnimationFrame(renderCursor);
-      }
+      cursorRing.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0) translate(-50%, -50%) scale(1)`;
     },
     { passive: true }
   );

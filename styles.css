@@ -227,13 +227,13 @@ li {
   backdrop-filter: blur(10px);
   pointer-events: none;
   transform: translate(-50%, -50%) scale(0);
+  will-change: transform;
   opacity: 0;
   z-index: 80;
   transition:
     width 180ms ease,
     height 180ms ease,
     opacity 180ms ease,
-    transform 180ms ease,
     border-color 180ms ease,
     background 180ms ease;
 }
